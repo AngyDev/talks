@@ -13,14 +13,8 @@ const mesh = new THREE.Mesh(geometry, material)
 
 scene.add(mesh)
 
-// Sizes
-const sizes = {
-  width: 800,
-  height: 600,
-}
-
 // Camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight)
 camera.position.z = 3
 scene.add(camera)
 
@@ -29,7 +23,7 @@ const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 })
 
-renderer.setSize(sizes.width, sizes.height)
+renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.render(scene, camera)
 
 // Animation
